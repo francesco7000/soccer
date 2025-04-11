@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+#app-container {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide browser UI when installed as PWA */
+@media all and (display-mode: standalone) {
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+
+/* Splash screen animation */
+#splash-screen {
+  opacity: 1;
+}
+
+/* Prevent pull-to-refresh */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Fix for iOS height issues */
+@supports (-webkit-touch-callout: none) {
+  body,
+  html {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Fix for iOS Safari bottom bar */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}

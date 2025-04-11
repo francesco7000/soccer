@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "routes": [
+    {
+      "src": "/sw.js",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "Service-Worker-Allowed": "/"
+      },
+      "dest": "/sw.js"
+    },
+    {
+      "src": "/manifest",
+      "headers": {
+        "content-type": "application/manifest+json",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "dest": "/manifest"
+    },
+    {
+      "src": "/icons/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/icons/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
