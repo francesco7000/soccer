@@ -77,39 +77,39 @@ export function PWADebug() {
   }
 
   return (
-    <Card className="mt-8">
-      <CardHeader>
-        <CardTitle>Diagnostica PWA</CardTitle>
+    <Card className="mt-8 shadow-lg border-0 overflow-hidden">
+      <CardHeader className="bg-primary/10">
+        <CardTitle className="text-primary">Diagnostica PWA</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div>
-          <strong>Modalità display:</strong> {displayMode}
+      <CardContent className="space-y-4 p-6">
+        <div className="p-3 bg-muted/30 rounded-md">
+          <strong className="text-primary">Modalità display:</strong> {displayMode}
         </div>
-        <div>
-          <strong>Modalità standalone:</strong> {isStandalone ? "Sì" : "No"}
+        <div className="p-3 bg-muted/30 rounded-md">
+          <strong className="text-primary">Modalità standalone:</strong> {isStandalone ? "Sì" : "No"}
         </div>
-        <div>
-          <strong>Installabile:</strong> {installable ? "Sì" : "No"}
+        <div className="p-3 bg-muted/30 rounded-md">
+          <strong className="text-primary">Installabile:</strong> {installable ? "Sì" : "No"}
         </div>
-        <div className="text-xs break-all">
-          <strong>User Agent:</strong> {userAgent}
+        <div className="text-xs break-all p-3 bg-muted/30 rounded-md">
+          <strong className="text-primary">User Agent:</strong> {userAgent}
         </div>
         {manifestInfo && (
-          <div>
-            <strong>Manifest:</strong> {manifestInfo.display}
+          <div className="p-3 bg-muted/30 rounded-md">
+            <strong className="text-primary">Manifest:</strong> {manifestInfo.display}
             {manifestInfo.url && <span className="text-xs ml-2">({manifestInfo.url})</span>}
           </div>
         )}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-4">
           {installable && (
-            <Button onClick={handleInstall} className="bg-green-600 hover:bg-green-700">
+            <Button onClick={handleInstall} className="bg-primary hover:bg-primary-dark transition-all duration-300 shadow-md">
               Installa App
             </Button>
           )}
-          <Button onClick={handleReload} variant="outline">
+          <Button onClick={handleReload} variant="outline" className="border-primary text-primary hover:bg-primary/10 transition-all duration-300">
             Ricarica App
           </Button>
-          <Button onClick={handleClearCache} variant="outline">
+          <Button onClick={handleClearCache} variant="outline" className="border-accent-color text-accent-color hover:bg-accent-color/10 transition-all duration-300">
             Cancella Cache
           </Button>
         </div>

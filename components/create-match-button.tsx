@@ -13,8 +13,11 @@ export function CreateMatchButton() {
   }
 
   return (
-    <Button className="bg-green-600 hover:bg-green-700" onClick={handleClick}>
-      <Plus className="mr-2 h-4 w-4" /> Nuova Partita
+    <Button 
+      className="bg-primary hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105" 
+      onClick={handleClick}
+    >
+      <Plus className="mr-2 h-4 w-4 animate-pulse" /> Nuova Partita
     </Button>
   )
 }

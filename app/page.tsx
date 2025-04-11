@@ -5,6 +5,7 @@ import { MatchCard } from "@/components/match-card"
 import { CreateMatchButton } from "@/components/create-match-button"
 import { InstallPrompt } from "@/components/install-prompt"
 import { IOSInstallGuide } from "@/components/ios-install-guide"
+import { WaveBackground } from "@/components/ui/wave-background"
 
 export default function Home() {
   // Hide splash screen after page loads
@@ -64,15 +65,16 @@ export default function Home() {
   }, [])
 
   return (
-    <div id="app-container">
-      <main className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl font-bold">Le Tue Partite</h1>
+    <div id="app-container" className="bg-background-light dark:bg-background-dark relative">
+      <WaveBackground />
+      <main className="container mx-auto px-4 py-8 relative z-10">
+        <div className="flex items-center justify-between mb-8 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-md">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent-color bg-clip-text text-transparent">Le Tue Partite</h1>
           <CreateMatchButton />
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {matches.map((match) => (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {matches.map((match, index) => (
             <MatchCard key={match.id} match={match} />
           ))}
         </div>

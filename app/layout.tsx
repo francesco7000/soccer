@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <head>
-        <meta name="theme-color" content="#16a34a" />
+        <meta name="theme-color" content="#3b82f6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
@@ -84,13 +84,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Calcetto" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-TileColor" content="#16a34a" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
         <meta name="msapplication-tap-highlight" content="no" />
       </head>
       <body className={inter.className}>
         <div
           id="splash-screen"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-green-600 transition-opacity duration-500"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-primary transition-opacity duration-500"
         >
           <div className="flex flex-col items-center">
             <div className="w-24 h-24 mb-4 rounded-full bg-white p-4 shadow-lg">
